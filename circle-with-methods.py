@@ -1,0 +1,62 @@
+#!/usr/bin/python3
+
+#
+# Looking at Class and Static Methods
+#
+# The "class methods" are methods that perform generic functions that are associated to the class, 
+# but not to the instance. These methods can be called as `class.method()` even when there is no instance. 
+#
+# A class method needs to be "decorated" as `@classmethod`
+#
+# The "static methods" are usually utility methods, that do not need to know anything about the class or 
+# its instances, but they are grouped inside the class because their utility function can be associated 
+# with the class. These methods also can be called as `class.method()` without any instance. 
+#
+# A static method needs to be decorated as `@staticmethod`
+#
+# This examples uses example of static and class methods to calculate `pi` and make it look pretty.
+
+class circle:
+  """
+  A circle object is created from a radius, default is 1
+  """
+  def __init__(self, radius=1):
+    "Initialise the circle from the specified radius"
+    self.radius = radius
+  @staticmethod
+  def pi():
+    "Decent approximation of a circle"
+    return 355/113
+  @classmethod
+  def strpi(cls):
+    "Format pi to look nice"
+    return "{cls}'s π = {pi:6f}".format(cls=cls.__name__, pi=cls.pi())
+  def diameter(self):
+    "Return twice the radius"
+    return self.radius * 2
+  def area(self):
+    "calculate the area of the circle"
+    return circle.pi() * self.radius **2
+  def perimeter(self):
+    "calculate the perimeter of the circle"
+    return self.diameter() * circle.pi()
+  def __repr__(self):
+    "representation of a circle"
+    return '{0}({1})'.format(self.__class__.__name__, self.radius)
+  def __str__(self):
+    "Pretty representation of a circle"
+    return 'circle with radius: {r:.6f}, diameter(d:.6f) area: {a:.6f}, perimeter: {p:.6f}'.format(r=self.radius, d=self.diameter(), a=self.area(), p=self.perimeter())
+
+#
+# Set the radius to 7
+#
+c = circle(7)
+
+#
+# Print info about the circle
+#
+print('Area', c.area())
+print('Diameter', c.diameter())
+print('Perimeter', c.perimeter())
+print('Pi', c.pi())
+print('Pretty Pi', c.strpi())

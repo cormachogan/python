@@ -25,11 +25,12 @@ class circle:
     return self.diameter() * circle.pi
 #
 # Set the radius to 7
+#
 c = circle(7)
 
 #
 # Print info about the circle
-
+#
 print('Area', c.area())
 print('Diameter', c.diameter())
 print('Perimeter', c.perimeter())

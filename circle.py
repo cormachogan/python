@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 #
-#
-# We can `circle.pi` to get pi. We can also `self.pi`, `self.__class__.pi`, or `type(self).pi`
-# `self.pi` accesses the instance's private copy; we should use that if we plan to have `pi` change for each instance. 
-# We should use `circle.pi` if we plan for `pi` to stay the same, or maybe change for every instance.
+# We can use `circle.pi` to get pi. We can also `self.pi`, `self.__class__.pi`, or `type(self).pi`
+# `self.pi` accesses the instance's private copy; we should use that if we plan to have `pi` change in different instances. 
+# We can use `circle.pi` if we plan for `pi` to stay the same, or maybe change for every instance.
 #
 
 class circle:

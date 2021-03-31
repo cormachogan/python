@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 #
+#
+# We can `circle.pi` to get pi. We can also `self.pi`, `self.__class__.pi`, or `type(self).pi`
+#
 class circle:
   """
   A circle object is created from a radius, default is 1
@@ -13,9 +16,6 @@ class circle:
     return self.radius * 2
   def area(self):
     "calculate the area of the circle"
-#
-# We are using `circle.pi` to get pi. We could also have used `self.pi`, `self.__class__`, or `type(self).pi`
-#
     return circle.pi * self.radius **2
   def perimeter(self):
     "calculate the perimeter of the circle"
